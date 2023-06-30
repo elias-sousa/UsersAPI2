@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace UsersAPI.Services.Controllers
@@ -22,6 +23,7 @@ namespace UsersAPI.Services.Controllers
             return Ok();
         }
 
+        [Authorize]
         [Route("reset-password")]
         [HttpPost]
         public IActionResult ResetPassword()
